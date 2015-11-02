@@ -1,0 +1,101 @@
+/* define */
+$bg-color: #fff;
+$icon-color: #333;
+$transition-duration: 0.2s;
+
+/* container */
+.bars {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: $bg-color;
+  cursor: pointer;
+}
+
+/* base */
+.bars .icon {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: $icon-color;
+  transition: $transition-duration;
+}
+.bars .icon:before,
+.bars .icon:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: $icon-color;
+  transition: $transition-duration;
+}
+.bars .icon:before {
+  top: -6px;
+}
+.bars .icon:after {
+  bottom: -6px;
+}
+
+/* hover */
+.bars:hover .icon:before {
+  top: -8px;
+}
+.bars:hover .icon:after {
+  bottom: -8px;
+}
+
+
+/* close */
+.bars.close .icon {
+  background-color: transparent;
+  transform: rotate(180deg);
+}
+.bars.close .icon:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.bars.close .icon:after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+/* arrow-left */
+.bars.arrow-left .icon {
+  transform: rotate(180deg);
+}
+.bars.arrow-left .icon:before {
+  width: 13px;
+  left: 8px;
+  top: -4px;
+  transform: rotate(45deg);
+}
+.bars.arrow-left .icon:after {
+  width: 13px;
+  left: 8px;
+  bottom: -4px;
+  transform: rotate(-45deg);
+}
+
+/* arrow-right */
+.bars.arrow-right .icon {
+  transform: rotate(180deg);
+}
+.bars.arrow-right .icon:before {
+  width: 13px;
+  right: 8px;
+  top: -4px;
+  transform: rotate(-45deg);
+}
+.bars.arrow-right .icon:after {
+  width: 13px;
+  right: 8px;
+  bottom: -4px;
+  transform: rotate(45deg);
+}
