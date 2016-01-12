@@ -1,12 +1,12 @@
 /* define */
 $bg-color: #fff;
-$icon-color: #333;
+$bars-color: #333;
 $transition-duration: 0.3s;
 
 /* container */
-.bars {
+.navicon {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 50px;
   height: 50px;
   background-color: $bg-color;
@@ -14,7 +14,7 @@ $transition-duration: 0.3s;
 }
 
 /* base */
-.bars .icon {
+.navicon .bars {
   position: absolute;
   top: 24px;
   left: 0;
@@ -23,60 +23,60 @@ $transition-duration: 0.3s;
   width: 18px;
   height: 2px;
   margin: 0 auto;
-  background-color: $icon-color;
+  background-color: $bars-color;
   transition: $transition-duration;
 }
-.bars .icon:before,
-.bars .icon:after {
+.navicon .bars:before,
+.navicon .bars:after {
   content: '';
   position: absolute;
   display: block;
   width: 18px;
   height: 2px;
-  background-color: $icon-color;
+  background-color: $bars-color;
   transition: $transition-duration;
 }
-.bars .icon:before {
+.navicon .bars:before {
   top: -6px;
 }
-.bars .icon:after {
+.navicon .bars:after {
   bottom: -6px;
 }
 
 /* hover */
-.bars:hover .icon:before {
+.navicon:hover .bars:before {
   top: -8px;
 }
-.bars:hover .icon:after {
+.navicon:hover .bars:after {
   bottom: -8px;
 }
 
 
 /* close */
-.bars.close .icon {
+.navicon.close .bars {
   background-color: transparent;
   transform: rotate(180deg);
 }
-.bars.close .icon:before {
+.navicon.close .bars:before {
   top: 0;
   transform: rotate(45deg);
 }
-.bars.close .icon:after {
+.navicon.close .bars:after {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
 /* arrow-left */
-.bars.arrow-left .icon {
+.navicon.arrow-left .bars {
   transform: rotate(180deg);
 }
-.bars.arrow-left .icon:before {
+.navicon.arrow-left .bars:before {
   width: 13px;
   left: 8px;
   top: -4px;
   transform: rotate(45deg);
 }
-.bars.arrow-left .icon:after {
+.navicon.arrow-left .bars:after {
   width: 13px;
   left: 8px;
   bottom: -4px;
@@ -84,16 +84,16 @@ $transition-duration: 0.3s;
 }
 
 /* arrow-right */
-.bars.arrow-right .icon {
+.navicon.arrow-right .bars {
   transform: rotate(180deg);
 }
-.bars.arrow-right .icon:before {
+.navicon.arrow-right .bars:before {
   width: 13px;
   right: 8px;
   top: -4px;
   transform: rotate(-45deg);
 }
-.bars.arrow-right .icon:after {
+.navicon.arrow-right .bars:after {
   width: 13px;
   right: 8px;
   bottom: -4px;
